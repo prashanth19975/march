@@ -4,7 +4,7 @@
 
 	<groupId>com.github.Premvikash</groupId>
 	<artifactId>Example</artifactId>
-	<version>35.0-SNAPSHOT</version>
+	<version>36.0-SNAPSHOT</version>
 	<name>Example</name>
 	<packaging>war</packaging>
 	<url>https://github.com/Premvikash/</url>
