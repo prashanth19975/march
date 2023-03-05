@@ -2,10 +2,16 @@ pipeline {
    agent any
       stages{
 	      stage ('git clone') {
-             steps {
+               steps {
                git 'https://github.com/prashanth19975/march.git'
              }
              }
+	      stage (" mvn --version") {
+	        steps {     
+		   sh "mvn --version"  
+		}
+	        }      
+		      
         
       }
 }
