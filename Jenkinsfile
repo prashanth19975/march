@@ -11,7 +11,12 @@ pipeline {
 		   sh "mvn --version"  
 		}
 	        }      
-		      
+	      stage ("maven build") {
+	        steps {
+	           sh "mvn clean compile test package"		
+		}
+	        }      
+	      
         
       }
 }
