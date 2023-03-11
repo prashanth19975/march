@@ -23,7 +23,7 @@ pipeline {
 	      }      
 	      stage ("Deploy to TOMCAT"){
 		 steps{
-	            deploy adapters: [tomcat9(credentialsId: 'TOMCAT', path: '', url: 'http://13.234.122.24:8080')], contextPath: 'PIPELINE-1', war: '**/*.war'
+	            deploy adapters: [tomcat9(credentialsId: 'TOMCAT', path: '', url: 'http://13.234.122.24:8080')], contextPath: 'somesh-pipeline-project', war: '**/*.war'
 		 }
 	        }      
            
