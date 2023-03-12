@@ -20,12 +20,7 @@ pipeline {
 		steps {
 		  sh "mvn deploy"	
 		}
-	      }      
-	      stage ("Deploy to TOMCAT"){
-		 steps{
-	            deploy adapters: [tomcat9(credentialsId: 'TOMCAT', path: '', url: 'http://13.234.122.24:8080')], contextPath: 'somesh-pipeline-project', war: '**/*.war'
-		 }
-	        }      
+	      }     
            
       }
 }
