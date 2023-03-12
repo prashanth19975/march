@@ -21,6 +21,10 @@ pipeline {
 		  sh "mvn deploy"	
 		}
 	      }     
-           
+	      stage ("BUILD DOCKER IMAGE") {
+		      steps {
+			  sh "docker build -t prashanth19975/my-image:1 ."     
+		      }
+	      }
       }
 }
