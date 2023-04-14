@@ -30,8 +30,8 @@ pipeline {
 			      
 	      stage("Docker Login and Push") {
 		      steps {
-			   withCredentials([string(credentialsId: 'DOCKERHUBPWD', variable: 'DOCKERHUBPWD')]) {
-				   sh "docker login -u prashanth19975 -u ${DOCKERHUBPWD}"		   
+			   withCredentials([string(credentialsId:'DOCKERHUBPWD', variable:'DOCKERHUBPWD')]) {
+				   sh "docker login -u prashanth19975 -p ${DOCKERHUBPWD}"		   
 				   sh "docker push prashanth19975/myimage:1"   
 			   }		   
 		      
