@@ -24,7 +24,16 @@ pipeline {
 	  
 	      stage("Build docker image") {
 		      steps {
-			 sh "docker build -t prashanth19975/myimage:1 ."     
+			 sh "docker build -t prashanth19975/myimage:1 ."   
+		      }
+	              }
+			      
+	      stage("Docker Login and Push") {
+		      steps {
+			   withCredentials([string(credentialsId: 'Docker-HUB-PWD', variable: 'DOCKER-HUB-PWD')]) {
+				   sh "docker login -u prashanth19975 -u ${DOCKER-HUB-PWD}"		   
+				   sh "docker push prashanth19975/myimage:1"   
+			   }		   
 		      
               }
 	      }
