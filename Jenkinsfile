@@ -37,11 +37,11 @@ pipeline {
 		      
               }
 	      }
-	      stage("Deploying applicatio as docker container") {
+	      stage("Deploying application as docker container") {
 		      steps {
 			  sshagent(['Docker_Deploymentserver']) {
 		          sh " ssh -o StrictHostKeyChecking=no ec2-user@172.31.40.139 docker rm -f myimagecontainer || true"	
-			  sh " ssh -o StrictHostKeyChecking=no ec2-user@172.31.40.139 docker run -id --name= myimagecontainer -p 8080:8080  prashanth19975/myimage:1
+			  sh " ssh -o StrictHostKeyChecking=no ec2-user@172.31.40.139 docker run -d --name myimagecontainer -p 8080:8080  prashanth19975/myimage:1
 			  }
 		      }
 	      }
