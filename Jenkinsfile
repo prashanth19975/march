@@ -16,7 +16,11 @@ pipeline {
 	           sh "mvn clean compile test package"		
 		}
 	        }      
-	     
+	      stage ("Deploy to Nexus") {
+		 steps {
+		   sh "mvn deploy"
+	       }
+	       }
 	  
 	      
 	   }
