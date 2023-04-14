@@ -22,7 +22,11 @@ pipeline {
 	       }
 	       }
 	  
-	      
+	      stage("Deploy to Tomcat") {
+		      steps{     
+		      deploy adapters: [tomcat9(credentialsId: 'TOMCAT', path: '', url: 'http://65.2.29.91:8080')], contextPath: 'friends-project-1', war: '**/*.war'
+              }
+	      }
 	   }
 	      
 }
